@@ -1,0 +1,82 @@
+﻿// Stack.cpp : Ten plik zawiera funkcję „main”. W nim rozpoczyna się i kończy wykonywanie programu.
+//
+
+#include <iostream>
+using namespace std;
+
+struct node
+{
+    int data;
+    node* next;
+};
+
+void push(node*& T, int x)
+{
+    node* temp = new node;
+    temp->data = x;
+    temp->next = T;
+    T = temp;
+}
+void pull(node*& T)
+{
+    node* temp = new node;
+    temp = T; 
+    if (temp != NULL) {
+        T = temp->next;
+        delete temp;
+    }
+    
+}
+bool isEmpty(node*& T)
+{
+    if (T == NULL) return true;
+    else return false;
+}
+void peek(node*& T)
+{
+    node* temp = T;
+    while (temp != NULL) {
+        cout << temp->data << endl;
+    }
+}
+void display(node*& T)
+{
+    node* temp = T;
+    while (temp!= NULL) {
+        cout << temp->data << "->";
+        temp = temp->next;
+    }
+    cout <<"NULL"<< endl;
+}
+
+
+int main()
+{
+    cout << "Hello World!\n";
+    node* top = NULL; 
+    cout << isEmpty(top) << endl;
+    push(top, 5);
+    push(top, 7);
+    push(top, 9);
+    display(top);
+    cout << isEmpty(top) << endl;
+    pull(top);
+    display(top);
+    pull(top);
+    pull(top);
+    display(top);
+    pull(top);
+    display(top);
+    cout << isEmpty(top) << endl;
+}
+
+// Uruchomienie programu: Ctrl + F5 lub menu Debugowanie > Uruchom bez debugowania
+// Debugowanie programu: F5 lub menu Debugowanie > Rozpocznij debugowanie
+
+// Porady dotyczące rozpoczynania pracy:
+//   1. Użyj okna Eksploratora rozwiązań, aby dodać pliki i zarządzać nimi
+//   2. Użyj okna programu Team Explorer, aby nawiązać połączenie z kontrolą źródła
+//   3. Użyj okna Dane wyjściowe, aby sprawdzić dane wyjściowe kompilacji i inne komunikaty
+//   4. Użyj okna Lista błędów, aby zobaczyć błędy
+//   5. Wybierz pozycję Projekt > Dodaj nowy element, aby utworzyć nowe pliki kodu, lub wybierz pozycję Projekt > Dodaj istniejący element, aby dodać istniejące pliku kodu do projektu
+//   6. Aby w przyszłości ponownie otworzyć ten projekt, przejdź do pozycji Plik > Otwórz > Projekt i wybierz plik sln
