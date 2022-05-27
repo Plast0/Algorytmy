@@ -35,13 +35,89 @@ void Inorder(node* root) {
 
 	}
 }
+node* max(node* root) {
+	//if (root->R != NULL) max(root->R);	
+	node* res = root;
+	if (res != NULL) {
+		while (res->R != NULL) {
+			res = res->R;
+		}
+	}
+	cout << res->val<<endl;
+	return res;
+}
+node* min(node* root) {
+	//if (root->L != NULL) min(root->L);
+	
+	node* res = root;
+	/*if (res != NULL) {
+		while (res->L != NULL) {
+			res = res->L;
+		}			
+	}*/
+	cout << res->val << endl;
+	return res;
+}
 /*
 void poprzednik(node* root, int x) {
-	if(root->)
+	node* p = root;
+	node* child = NULL;
+	if (p != NULL) {
+		if (p->L == NULL) {
+			child = p;
+			p = p->up;
+			while (p != NULL && p->R == child) {
+				child = p;
+				p = p->up;
+			}
+			cout << "Poprzednik: " << p->val << endl;
+			return p;
+		}
+		else {
+			cout << "Poprzednik " << p->L->val << endl;
+			return max(p->L);
+		}
+	}
 }
 void następnik(node* root) {
-	
+	node* p = root;
+	node* child = NULL;
+	if (p != NULL) {
+		if (p->R == NULL) {
+			child = p;
+			p = p->up;
+			while (p != NULL && p->L == child) {
+				child = p;
+				p = p->up;
+			}
+			cout << "Nastepnik: " << p->val << endl;
+			return p;
+		}
+		else {
+			cout << "Nastepnik: " << p->R->val << endl;
+			return min(p->R);
+		}
+		
+	}
+}
 }*/
+void usun(node* root) {
+	node* p = root;
+	if (p != NULL) {
+		if (p->L == NULL && p->R == NULL) {
+			delete p;
+		}
+		else if (p->L != NULL && p->R != NULL) {
+			delete p;
+			p = nastepnik(p);
+		}
+		else if (p->L != NULL || p->R != NULL) {
+			delete p;
+			p = p->L;
+		}
+
+	}
+}
 
 int main()
 {
@@ -56,7 +132,9 @@ int main()
 	insertBST(root, 36);
 	insertBST(root, 18);
 	insertBST(root, 22);
-	Inorder(root);
+	//Inorder(root);
+	max(root);
+	min(root);
 	//for (;;);
 	system("pause");
 	return 0;

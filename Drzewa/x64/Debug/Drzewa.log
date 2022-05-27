@@ -1,2 +1,3 @@
 ﻿  Drzewa.cpp
+C:\Users\Piotrek\Documents\studia\Sem IV\Algorytmy\Algorytmy\Drzewa\Drzewa.cpp(63): warning C4717: "min": cykliczne we wszystkich ścieżkach przepływu, funkcja spowoduje przepełnienie stosu w trakcie wykonywania
   Drzewa.vcxproj -> C:\Users\Piotrek\Documents\studia\Sem IV\Algorytmy\Algorytmy\Drzewa\x64\Debug\Drzewa.exe
