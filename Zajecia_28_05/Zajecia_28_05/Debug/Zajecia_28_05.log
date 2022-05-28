@@ -1,0 +1,3 @@
+﻿  Zajecia_28_05.cpp
+\\krywan\redirecteduserfolders\piobara1\documents\algorytmy\zajecia_28_05\zajecia_28_05\zajecia_28_05.cpp(10): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+LINK : fatal error LNK1168: cannot open \\KRYWAN\RedirectedUserFolders\piobara1\Documents\Algorytmy\Zajecia_28_05\Debug\Zajecia_28_05.exe for writing
