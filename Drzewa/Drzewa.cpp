@@ -29,27 +29,30 @@ void Inorder(node* root) {
 	if (root != NULL) {
 		Inorder(root->L);
 		cout << root->val << " ";
-		if(root->UP != NULL)
-		cout << "\nJego Up: "<<root->UP->val << endl;
+		//if(root->UP != NULL)
+		//cout << "\nJego Up: "<<root->UP->val << endl;
 		Inorder(root->R);
 
 	}
 }
-node* max(node* root) {
-	//if (root->R != NULL) max(root->R);	
+node* max(node* root) {	
 	node* res = root;
+	if (root->R != NULL) max(root->R);	
+	/*node* res = root;
 	if (res != NULL) {
 		while (res->R != NULL) {
 			res = res->R;
 		}
-	}
+	}*/
+	else
 	cout << res->val<<endl;
 	return res;
 }
 node* min(node* root) {
-	//if (root->L != NULL) min(root->L);
-	
 	node* res = root;
+	if (root->L != NULL) min(root->L);
+	else
+	
 	/*if (res != NULL) {
 		while (res->L != NULL) {
 			res = res->L;
@@ -58,49 +61,57 @@ node* min(node* root) {
 	cout << res->val << endl;
 	return res;
 }
-/*
-void poprzednik(node* root, int x) {
+
+node* poprzednik(node* root) {
 	node* p = root;
-	node* child = NULL;
+	node* leaf = NULL;
 	if (p != NULL) {
 		if (p->L == NULL) {
-			child = p;
-			p = p->up;
-			while (p != NULL && p->R == child) {
-				child = p;
-				p = p->up;
+			leaf = p;
+			p = p->UP;
+			while (p != NULL && p->R == leaf) {
+				leaf = p;
+				p = p->UP;
 			}
-			cout << "Poprzednik: " << p->val << endl;
-			return p;
+			cout << "Poprzednik: " <<  endl;
+			return leaf;
 		}
 		else {
-			cout << "Poprzednik " << p->L->val << endl;
+			cout << "Poprzednik "  << endl;
 			return max(p->L);
 		}
 	}
 }
-void następnik(node* root) {
+node* nastepnik(node* root) {
 	node* p = root;
 	node* child = NULL;
 	if (p != NULL) {
 		if (p->R == NULL) {
 			child = p;
-			p = p->up;
-			while (p != NULL && p->L == child) {
+			p = p->UP;
+			while (p != NULL && child == p->R) {
 				child = p;
-				p = p->up;
+				p = p->UP;
 			}
-			cout << "Nastepnik: " << p->val << endl;
+			cout << "Nastepnik: "  << endl;
 			return p;
 		}
 		else {
-			cout << "Nastepnik: " << p->R->val << endl;
+			cout << "Nastepnik: "  << endl;
 			return min(p->R);
 		}
 		
 	}
 }
+/*node* nastepnik(node* root) {
+	node* p = root;
+	if (p != NULL) {
+		if (p->R == NULL) {
+			if(p!=)
+		}
+	}
 }*/
+
 void usun(node* root) {
 	node* p = root;
 	if (p != NULL) {
@@ -132,9 +143,13 @@ int main()
 	insertBST(root, 36);
 	insertBST(root, 18);
 	insertBST(root, 22);
-	//Inorder(root);
+	Inorder(root);
 	max(root);
 	min(root);
+	nastepnik(root);
+	poprzednik(root);
+	min(root->R);
+	//cout << endl << root->val;
 	//for (;;);
 	system("pause");
 	return 0;

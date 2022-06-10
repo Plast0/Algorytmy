@@ -1,3 +1,4 @@
 ﻿  Drzewa.cpp
-C:\Users\Piotrek\Documents\studia\Sem IV\Algorytmy\Algorytmy\Drzewa\Drzewa.cpp(63): warning C4717: "min": cykliczne we wszystkich ścieżkach przepływu, funkcja spowoduje przepełnienie stosu w trakcie wykonywania
+C:\Users\Piotrek\Documents\studia\Sem IV\Algorytmy\Algorytmy\Drzewa\Drzewa.cpp(84): warning C4715: "poprzednik”: niewszystkie ścieżki kodu zwracają wartość
+C:\Users\Piotrek\Documents\studia\Sem IV\Algorytmy\Algorytmy\Drzewa\Drzewa.cpp(105): warning C4715: "nastepnik”: niewszystkie ścieżki kodu zwracają wartość
   Drzewa.vcxproj -> C:\Users\Piotrek\Documents\studia\Sem IV\Algorytmy\Algorytmy\Drzewa\x64\Debug\Drzewa.exe
