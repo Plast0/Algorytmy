@@ -1,0 +1,3 @@
+﻿  Sort.cpp
+C:\Users\Piotrek\Documents\studia\Sem IV\Algorytmy\Algorytmy\Sort\Sort.cpp(103,20): warning C4244: "=": konwersja z "double" do "int", możliwa utrata danych
+  Sort.vcxproj -> C:\Users\Piotrek\Documents\studia\Sem IV\Algorytmy\Algorytmy\Sort\x64\Debug\Sort.exe
